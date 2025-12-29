@@ -1,0 +1,392 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #8b1e1e;
+    --black: #1a1a1a;
+    --gray: #666;
+    --light-teal: #1d9b86;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: var(--black);
+    overflow-x: hidden;
+}
+
+/* Marquee */
+.top-bar {
+    background: #000;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.marquee-wrapper {
+    display: flex;
+    width: 200%;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Navbar */
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 75vh;
+    background: url('https://gainzgriid.in/cdn/shop/files/WhatsApp_Image_2025-12-24_at_7.42.25_PM.jpg?v=1766585947&width=832') center/cover no-repeat;
+}
+
+/* Reels */
+.reels-section {
+    background: var(--red);
+    padding: 50px 5%;
+    text-align: center;
+    color: #fff;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 30px;
+}
+
+.reels-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scrollbar-width: none;
+}
+
+.reel-card {
+    min-width: 220px;
+    aspect-ratio: 9/16;
+    background: #333;
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
+/* Banner */
+.featured-banner img {
+    width: 100%;
+    display: block;
+}
+
+/* Product Grid */
+.products-section {
+    padding: 60px 5%;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #fff;
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.product-image img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.08);
+}
+
+.sale-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.add-to-cart {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product-info {
+    padding: 15px 0;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* Gym Video Section */
+.promo-video-container {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+.video-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.video-content h2 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.cta-btn {
+    padding: 15px 40px;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 5%;
+    background: #f4fdfb;
+}
+
+.faq-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background: #fff;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px;
+    background: none;
+    border: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: 0.3s ease;
+}
+
+.accordion-body.active {
+    max-height: 200px;
+    padding-bottom: 20px;
+}
+
+.faq-image img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Footer */
+.footer {
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+.newsletter-section {
+    background: #222;
+    color: #fff;
+    padding: 40px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 1px solid #444;
+    background: transparent;
+    color: #fff;
+}
+
+.newsletter-form button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+}
+
+.footer-main {
+    padding: 60px 5%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo { height: 40px; margin-bottom: 20px; }
+.footer-col h4 { margin-bottom: 20px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { text-decoration: none; color: var(--gray); font-size: 14px; }
+
+/* WhatsApp */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    z-index: 1000;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .faq-wrapper, .footer-main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px; left: 0; width: 100%;
+        background: #fff;
+        padding: 20px;
+        flex-direction: column;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+}
